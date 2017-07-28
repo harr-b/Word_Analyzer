@@ -33,7 +33,10 @@ public class Driver {
 		while(fileScanner.hasNext()) {
 			String word = fileScanner.next();
 			//******Make sure there are no extraneous characters******
-			words.add(word);			
+			if(wordAuthenticator(word) == false) {	
+				word = wordCorrection(word);
+			}
+			words.add(word);	
 		}
 				
 		
